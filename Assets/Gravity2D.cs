@@ -20,22 +20,21 @@ public class Gravity2D : MonoBehaviour {
         float distance = direction.magnitude;
 
         float forceMagnitude = (rb.mass * rb2.mass) / Mathf.Pow(distance, 2);
-        Vector2 force = direction.normalized * forceMagnitude * 150;
-
-        rb.AddForce(force);
-        Debug.Log(force);
-    }
-
-    public void attract(Rigidbody2D attractor)
-    {
-        Rigidbody2D attractTo = attractor;
-
-        Vector2 direction = rb.position - attractTo.position;
-        float distance = direction.magnitude;
-
-        float forceMagnitude = (rb.mass * attractTo.mass) / Mathf.Pow(distance, 2);
-        Vector2 force = direction.normalized * forceMagnitude;
+        Vector2 force = direction.normalized * forceMagnitude * 655;
 
         rb.AddForce(force);
     }
+
+   //public void attract(Rigidbody2D attractor)
+   //{
+   //    Rigidbody2D attractTo = attractor;
+   //
+   //    Vector2 direction = rb.position - attractTo.position;
+   //    float distance = direction.magnitude;
+   //
+   //    float forceMagnitude = (rb.mass * attractTo.mass) / Mathf.Pow(distance, 2);
+   //    Vector2 force = direction.normalized * forceMagnitude;
+   //
+   //    rb.AddForce(force);
+   //}
 }
